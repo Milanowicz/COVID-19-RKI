@@ -11,7 +11,7 @@ https://github.com/Milanowicz/COVID-19-Dataset/blob/master/data/rki/time_series_
 
 <table>
 <tr>
-<th>State</th><th>Update</th><th>Confirmed</th><th>Deaths</th>
+<th>State</th><th>Date</th><th>Confirmed</th><th>Deaths</th>
 </tr>
 <tr>
 <td>Name of federal state (German Bundesland)</td>

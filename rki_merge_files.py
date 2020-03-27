@@ -21,7 +21,7 @@ for item in os.listdir(CSVLOC):
 
 # further wrangling:
 df_data.deaths.replace({np.nan: 0}, inplace=True)
-df_data['Update'] = pd.to_datetime(df_data.date).dt.date
+df_data['Date'] = pd.to_datetime(df_data.date).dt.date
 df_data = df_data.drop(df_data[df_data.Bundesland == 'Gesamt'].index)
 df_data = df_data.drop(df_data[df_data.confirmed == 'Fälle'].index)
 df_data.confirmed = df_data.confirmed.astype(int)
@@ -33,7 +33,7 @@ df_data['State'] = df_data['State'].replace({'Schleswig Holstein': 'Schleswig-Ho
 df_data['State'] = df_data['State'].str.replace(r'[^A-Za-zÄÖÜäöüß-]', r'')
 
 # grouping to prevent duplicate entries for one day:
-df_data = df_data.groupby(['State', 'Update']).agg({'confirmed': 'max', 'deaths': 'max'})
+df_data = df_data.groupby(['State', 'Date']).agg({'confirmed': 'max', 'deaths': 'max'})
 df_data.rename(columns={'deaths': 'Deaths', 'confirmed': 'Confirmed'}, inplace=True)
 
 df_data.to_csv(CSVOUT)
