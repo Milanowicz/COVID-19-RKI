@@ -38,7 +38,7 @@ if rki_update_time in dates:
 
 # Get cases table from RKI and parse into a Dataframe
 table = main.find('table')
-columns = ['Bundesland', 'confirmed', 'confirmed_diff', 'extra', 'deaths', 'extra2']
+columns = ['Bundesland', 'confirmed', 'confirmed_diff', 'extra', 'deaths']
 df = pd.read_html(str(table), thousands='.', decimal=',')[0]
 
 # Format DataFrame
