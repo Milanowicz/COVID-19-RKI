@@ -33,8 +33,8 @@ df_data['State'] = df_data['State'].replace({'Schleswig Holstein': 'Schleswig-Ho
 df_data['State'] = df_data['State'].str.replace(r'[^A-Za-zÄÖÜäöüß-]', r'')
 
 # grouping to prevent duplicate entries for one day:
-df_data = df_data.groupby(['State', 'Date']).agg({'confirmed': 'max', 'deaths': 'max'})
 df_data.rename(columns={'deaths': 'Deaths', 'confirmed': 'Confirmed'}, inplace=True)
+df_data = df_data.groupby(['State', 'Date']).agg({'Confirmed': 'max', 'Deaths': 'max'})
 
 df_data.to_csv(CSVOUT)
 print('Write data to CSV file ' + str(CSVOUT))
