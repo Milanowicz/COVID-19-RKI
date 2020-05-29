@@ -30,7 +30,15 @@ df_data.confirmed = df_data.confirmed.astype(int)
 # fixing different spellings of SH and MV:
 df_data['State'] = df_data.Bundesland
 df_data['State'] = df_data['State'].str.strip()
-df_data['State'] = df_data['State'].replace({'Schleswig Holstein': 'Schleswig-Holstein'})
+df_data['State'].replace({'Baden-Württem­berg': 'Baden-Württemberg'}, inplace=True)
+df_data['State'].replace({'Branden-burg': 'Brandenburg'}, inplace=True)
+df_data['State'].replace({'Schleswig Holstein': 'Schleswig-Holstein'}, inplace=True)
+df_data['State'].replace({'Schles­wig-Holstein': 'Schleswig-Holstein'}, inplace=True)
+df_data['State'].replace({'Meck-lenburg- Vor­pommern': 'Mecklenburg-Vorpommern'}, inplace=True)
+df_data['State'].replace({'Nieder-sachsen': 'Niedersachsen'}, inplace=True)
+df_data['State'].replace({'Nord-rhein-West­falen': 'Nordrhein-Westfalen'}, inplace=True)
+df_data['State'].replace({'Rhein­land-Pfalz': 'Rheinland-Pfalz'}, inplace=True)
+df_data['State'].replace({'RheinlandPfalz': 'Rheinland-Pfalz'}, inplace=True)
 df_data['State'] = df_data['State'].str.replace(r'[^A-Za-zÄÖÜäöüß-]', r'')
 
 # grouping to prevent duplicate entries for one day:
