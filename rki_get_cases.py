@@ -2,6 +2,7 @@
 # coding: utf-8
 
 from bs4 import BeautifulSoup
+import cloudscraper
 import pandas as pd
 import datetime
 import os
@@ -20,8 +21,10 @@ for item in os.listdir(CSVLOC):
 
 # Call to RKI page to get HTML as string back
 url = 'https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Fallzahlen.html'
-soupurl = requests.get(url).text
-soup = BeautifulSoup(soupurl, 'html.parser')
+scraper = cloudscraper.create_scraper()
+req = scraper.get(url).text
+soup = BeautifulSoup(req, 'html.parser')
+
 main = soup.find('div', {'id': 'main'})
 
 # Get RKI update time and format it and set it for csv file later

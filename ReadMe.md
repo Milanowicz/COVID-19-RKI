@@ -29,7 +29,7 @@ Dataset [rki_data.csv](https://raw.githubusercontent.com/Milanowicz/COVID-19-RKI
 Create environment and install Python libs for a GNU/Linux operation system:
 
     $ . env.sh
-    $ pip3 install pandas numpy BeautifulSoup4 requests lxml
+    $ pip3 install pandas numpy BeautifulSoup4 cloudscraper requests lxml
    
 
 ### Usage from Python scripts
