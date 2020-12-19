@@ -1,5 +1,8 @@
 # COVID-19 case numbers from Robert Koch-Institut in Germany
 
+![](https://img.shields.io/github/repo-size/milanowicz/COVID-19-RKI)
+![](https://img.shields.io/github/languages/code-size/milanowicz/COVID-19-RKI)
+
 Python scripts for collecting historical case numbers of the spread of COVID-19 in Germany from Robert Koch-Institut.
 https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Fallzahlen.html
 
